@@ -42,6 +42,7 @@ export default function Home() {
       </div>
       <div>
         <h1>{products.title}</h1>
+        
       </div>
     </div>
   );
