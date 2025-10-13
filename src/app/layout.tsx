@@ -21,7 +21,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       lang="fa"
       dir="rtl"
     >
-      <body className={`${vazirMatn.className} ${roboto.className} antialiased`}>
+      <body className={`${vazirMatn.className} antialiased`}>
         <>{children}</>
       </body>
     </html>
