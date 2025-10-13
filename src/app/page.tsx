@@ -1,8 +1,16 @@
+"use client";
+
+import { useRef } from "react";
+import { useFitCount } from "./hooks/useFitCount";
+
 import Image from "next/image";
+
 import DUMMY_PRODUCT from "./dummy-data/product";
 
 export default function Home() {
   const products = DUMMY_PRODUCT;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const count = useFitCount(containerRef, 80);
 
   return (
     <div className="flex gap-2">
@@ -14,8 +22,11 @@ export default function Home() {
             alt={products.title}
           />
         </div>
-        <div className="mt-4 flex gap-8">
-          {products.gallery.map((item) => (
+        <div
+          ref={containerRef}
+          className="mt-4 flex gap-8"
+        >
+          {products.gallery.slice(0, count).map((item) => (
             <div
               key={item.id}
               className="relative h-30 w-30"

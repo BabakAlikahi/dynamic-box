@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import { Vazirmatn } from "next/font/google";
+import { Roboto, Vazirmatn } from "next/font/google";
 
 import "./globals.css";
 
 const vazirMatn = Vazirmatn({
   subsets: ["arabic"],
+});
+const roboto = Roboto({
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -18,7 +21,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       lang="fa"
       dir="rtl"
     >
-      <body className={`${vazirMatn.className} antialiased`}>{children}</body>
+      <body className={`${vazirMatn.className} ${roboto.className} antialiased`}>
+        <>{children}</>
+      </body>
     </html>
   );
 }
