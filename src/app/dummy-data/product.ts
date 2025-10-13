@@ -26,6 +26,20 @@ const DUMMY_PRODUCT: ProductType = {
       src: "images/product/image-4.jpg",
     },
   ],
+  size: [
+    {
+      id: 1,
+      name: "m",
+    },
+    {
+      id: 2,
+      name: "l",
+    },
+    {
+      id: 3,
+      name: "xl",
+    },
+  ],
 };
 
 export default DUMMY_PRODUCT;

@@ -6,7 +6,7 @@ import { useFitCount } from "./hooks/useFitCount";
 import Image from "next/image";
 
 import DUMMY_PRODUCT from "./dummy-data/product";
-
+import { FaRegStar } from "react-icons/fa6";
 export default function Home() {
   const products = DUMMY_PRODUCT;
   const containerRef = useRef<HTMLDivElement>(null);
@@ -42,7 +42,36 @@ export default function Home() {
       </div>
       <div>
         <h1>{products.title}</h1>
-        
+        <div className="flex gap-2">
+          <FaRegStar />
+          <FaRegStar />
+          <FaRegStar />
+          <FaRegStar />
+          <FaRegStar />
+        </div>
+        <div>
+          <h3>{products.price}</h3>
+        </div>
+        <div>
+          <p>سایز</p>
+          <div className="flex flex-wrap gap-2">
+            {products.size.map((item) => (
+              <h3
+                className="min-w-40 rounded-2xl bg-gray-600 bg-gradient-to-l p-2 text-center"
+                key={item.id}
+              >
+                {item.name}
+              </h3>
+            ))}
+          </div>
+        </div>
+        <div>
+          <p>توضیحات</p>
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut cum, harum reiciendis possimus quod soluta maxime, veniam ipsum temporibus
+            eaque commodi earum neque. Doloremque quibusdam aut cupiditate, deserunt ad libero!{" "}
+          </div>
+        </div>
       </div>
     </div>
   );
