@@ -38,10 +38,7 @@ function ProductDetail({ products }: Props) {
       </Section>
       <Section>
         <p className="font-semibold">توضیحات</p>
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut cum, harum reiciendis possimus quod soluta maxime, veniam ipsum temporibus eaque
-          commodi earum neque. Doloremque quibusdam aut cupiditate, deserunt ad libero!{" "}
-        </div>
+        <div>{products.description}</div>
       </Section>
     </>
   );

@@ -15,4 +15,5 @@ export type ProductType = {
   featureImage: string;
   gallery: gallery[];
   size:size[]
+  description:string
 };
