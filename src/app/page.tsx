@@ -5,10 +5,10 @@ import { useFitCount } from "./hooks/useFitCount";
 
 import DUMMY_PRODUCT from "./dummy-data/product";
 import Lightbox from "yet-another-react-lightbox";
-import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import GalleryItem from "./components/product/gallery-item";
 import FeatureImage from "./components/product/feature-image";
 import ProductDetail from "./components/product/product-detail";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";

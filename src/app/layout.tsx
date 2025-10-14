@@ -22,7 +22,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       dir="rtl"
     >
       <body className={`${vazirMatn.className} antialiased`}>
-        <>{children}</>
+        <>
+          {/* <Header subject="How to Handle Dynamic Items in React with ResizeObserver" /> */}
+          {children}
+        </>
       </body>
     </html>
   );
