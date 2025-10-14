@@ -9,8 +9,21 @@ export function useFitCount(containerRef: RefObject<HTMLElement | null>, itemWid
     const el = containerRef.current;
 
     const updateCount = () => {
-      const containerWidth = el.clientWidth || 0;
-      const fitCount = Math.max(1, Math.floor(containerWidth / itemWidth));
+      const computedStyle = window.getComputedStyle(el);
+      const containerWidth = el.clientWidth;
+
+      // Get gap from row-gap or gap property
+      const gapValue = computedStyle.getPropertyValue("gap") || computedStyle.getPropertyValue("row-gap") || "0px";
+      const gap = parseFloat(gapValue) || 0;
+
+      // Get padding from left and right
+      const paddingLeft = parseFloat(computedStyle.paddingLeft) || 0;
+      const paddingRight = parseFloat(computedStyle.paddingRight) || 0;
+      const totalPadding = paddingLeft + paddingRight;
+
+      const availableWidth = containerWidth - totalPadding;
+      const totalItemWidth = itemWidth + gap;
+      const fitCount = Math.max(1, Math.floor((availableWidth + gap) / totalItemWidth));
       setCount(fitCount);
     };
 
@@ -21,7 +34,6 @@ export function useFitCount(containerRef: RefObject<HTMLElement | null>, itemWid
     });
 
     observer.observe(el);
-    console.log("observe", observer);
 
     return () => {
       observer.disconnect();

@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-8 px-10 py-4 md:flex-row">
-      <div className=" md:w-2/5 shrink-0 overflow-hidden rounded shadow-2xl">
+      <div className="h-fit shrink-0 overflow-hidden rounded shadow-2xl md:w-2/5">
         <FeatureImage
           imgSrc={products.featureImage}
           imgAlt={products.title}
@@ -23,13 +23,15 @@ export default function Home() {
 
         <div
           ref={containerRef}
-          className="flex gap-4 p-4"
+          className="flex justify-center gap-4 p-4"
         >
-          {products.gallery.slice(0, count).map((item) => (
+          {products.gallery.slice(0, count).map((item, index) => (
             <GalleryItem
               key={item.id}
               imgSrc={item.src}
               imgAlt={item.name}
+              isLast={index === count - 1}
+              remainingCount={index === count - 1 ? products.gallery.length - count : undefined}
             />
           ))}
         </div>
