@@ -15,14 +15,15 @@ export default function Home() {
 
   return (
     <div className="flex gap-8 px-10 py-4">
-      <div className="w-2/5 shrink-0 pb-2 shadow-2xl rounded overflow-hidden">
+      <div className="w-2/5 shrink-0 overflow-hidden rounded shadow-2xl">
         <FeatureImage
           imgSrc={products.featureImage}
           imgAlt={products.title}
         />
+        
         <div
           ref={containerRef}
-          className="mt-4 flex gap-8"
+          className="p-4 flex gap-4"
         >
           {products.gallery.slice(0, count).map((item) => (
             <GalleryItem

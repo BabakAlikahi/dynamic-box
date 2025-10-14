@@ -7,7 +7,7 @@ type Props = {
 
 function FeatureImage({ imgSrc, imgAlt }: Props) {
   return (
-    <div className="relative aspect-square">
+    <div className="relative aspect-square overflow-hidden rounded">
       <Image
         src={`/${imgSrc}`}
         fill

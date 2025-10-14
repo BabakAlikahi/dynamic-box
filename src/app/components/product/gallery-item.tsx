@@ -7,7 +7,7 @@ type Props = {
 
 export default function GalleryItem({ imgSrc, imgAlt }: Props) {
   return (
-    <div className="relative h-20 w-20">
+    <div className="relative h-20 w-20 overflow-hidden rounded">
       <Image
         src={`/${imgSrc}`}
         fill
