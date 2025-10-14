@@ -1,6 +1,8 @@
 import { FaStar } from "react-icons/fa6";
 import { ProductType } from "@/app/types/product-type";
 
+import React from "react";
+
 type Props = {
   products: ProductType;
 };
@@ -47,6 +49,6 @@ function ProductDetail({ products }: Props) {
 
 export default ProductDetail;
 
-const Section = ({ children }) => {
+const Section = ({ children }: { children: React.ReactNode }) => {
   return <div className="flex flex-col gap-2">{children}</div>;
 };
