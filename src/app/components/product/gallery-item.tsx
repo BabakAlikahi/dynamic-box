@@ -16,7 +16,9 @@ export default function GalleryItem({ imgSrc, imgAlt, isLast, remainingCount }: 
         alt={imgAlt}
       />
       {isLast && remainingCount && remainingCount > 0 && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/50 text-white">+{remainingCount}</div>
+        <div className="absolute inset-0 flex items-center justify-center overflow-hidden rounded bg-black/5 text-white backdrop-blur-xs">
+          +{remainingCount}
+        </div>
       )}
     </div>
   );
