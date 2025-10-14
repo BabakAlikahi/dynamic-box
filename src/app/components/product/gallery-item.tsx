@@ -3,13 +3,17 @@ import Image from "next/image";
 type Props = {
   imgSrc: string;
   imgAlt: string;
-  isLast?: boolean;
+  isLast: boolean;
   remainingCount?: number;
+  onClick: () => void;
 };
 
-export default function GalleryItem({ imgSrc, imgAlt, isLast, remainingCount }: Props) {
+export default function GalleryItem({ imgSrc, imgAlt, isLast, remainingCount, onClick }: Props) {
   return (
-    <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded">
+    <div
+      className="relative h-20 w-20 shrink-0 overflow-hidden rounded"
+      onClick={onClick}
+    >
       <Image
         src={`/${imgSrc}`}
         fill
