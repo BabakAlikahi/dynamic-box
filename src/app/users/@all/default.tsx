@@ -1,14 +1,3 @@
-import React from "react";
-
-type Props = {};
-
-export default function UserActivePage({}: Props) {
-
-  return (
-    <div>
-      <div className="flex items-center justify-between">
-        all member
-      </div>
-    </div>
-  );
+export default function UserActivePage() {
+  return <div className="flex h-4/5 items-center justify-center border-b border-gray-200 bg-gray-100">لیست کاربران</div>;
 }

@@ -1,15 +1,34 @@
-import Link from "next/link";
-import React from "react";
+import UserCard from "../components/userCard";
 
-type Props = {};
+export default function UserActivePage() {
+  const DUMMY_ACTIVE_USERS = [
+    {
+      id: 1,
+      name: "بابک علی کاهی",
+    },
+    {
+      id: 2,
+      name: "تست تستیان",
+    },
+    {
+      id: 3,
+      name: "احمد مرادی",
+    },
+    {
+      id: 4,
+      name: "مراد احمدی",
+    },
+  ];
 
-export default function UserActivePage({}: Props) {
   return (
-    <div className="">
-      <div className="flex items-center justify-between border-b border-gray-200 px-2 py-4">
-        <p>حمد رضا محمدی</p>
-        <Link href={"users/1"}>مشاهده جزِیات</Link>
-      </div>
+    <div>
+      {DUMMY_ACTIVE_USERS.map((item) => (
+        <UserCard
+          key={item.id}
+          name={item.name}
+          id={item.id}
+        />
+      ))}
     </div>
   );
 }

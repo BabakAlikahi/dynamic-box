@@ -1,13 +1,12 @@
-import React from "react";
+import UserCard from "../../components/userCard";
 
-type Props = {};
-
-export default function DetailPage({}: Props) {
+export default function DetailPage() {
   return (
-    <div className="px-2">
-      <div className="flex items-center justify-between">
-        <p>حمد رضا محمدی</p>
-      </div>
-    </div>
+    <>
+      <UserCard
+        hasDetail
+        name={"بابک علی کاهی"}
+      />
+    </>
   );
 }
