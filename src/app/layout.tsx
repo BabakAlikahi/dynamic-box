@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import { Roboto, Vazirmatn } from "next/font/google";
+import { Vazirmatn } from "next/font/google";
 
 import "./globals.css";
+import Header from "./components/ui/Header";
 
 const vazirMatn = Vazirmatn({
   subsets: ["arabic"],
-});
-const roboto = Roboto({
-  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -23,7 +21,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     >
       <body className={`${vazirMatn.className} antialiased`}>
         <>
-          {/* <Header subject="How to Handle Dynamic Items in React with ResizeObserver" /> */}
+          <Header subject="How to handle dynamic routes in Parallel Routes in Next.js" />
           {children}
         </>
       </body>
