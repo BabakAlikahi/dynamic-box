@@ -11,7 +11,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Dynamic Box",
+  title: "Parallel Routes in Next.js",
   description: "Created By Babak alikahi",
 };
 
